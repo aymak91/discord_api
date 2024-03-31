@@ -52,12 +52,14 @@ app.get('/api/auth/discord/redirect', async (req, res) => {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
             });
-            console.log('output data:', output.data);
-            console.log('user data:', userInfo.data);
-            console.log('user-server data:', userServerInfo.data);
-            console.log('refresh data:', refresh.data);
+
             console.log(userServerInfo.data.roles.includes('1199603063552495701'))
-            res.send(userServerInfo.data.roles.includes('1199603063552495701'))
+            res.send({
+                'output': output.data,
+                'userInfo': userInfo.data,
+                'userServerInfo': userServerInfo.data,
+                'refreshData': refresh.data,
+            })
         };
     };
 });
