@@ -57,7 +57,7 @@ app.get('/api/auth/discord/redirect', async (req, res) => {
             console.log('user-server data:', userServerInfo.data);
             console.log('refresh data:', refresh.data);
             console.log(userServerInfo.data.roles.includes('1199603063552495701'))
-            return userServerInfo.data.roles.includes('1199603063552495701')
+            res.send(userServerInfo.data.roles.includes('1199603063552495701'))
         };
     };
 });
